@@ -1,33 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: supervisord
+  name: supervisordvan
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: supervisord
+      app: supervisordvan
   template:
     metadata:
       labels:
-        app: supervisord
+        app: supervisordvan
     spec:
       containers:
-      - image: quay.io/cata0nana/oc3_v5_big0_git
-        name: supervisord
+      - image: quay.io/cata0nana/oc3_v5_van_img
+        name: supervisordvan
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: supervisord
+  name: supervisordvan
   annotations:
     dev.okteto.com/auto-ingress: "true"
 spec:
   type: ClusterIP  
   ports:
-  - name: "supervisord"
+  - name: "supervisordvan"
     port: 8080
   selector:
-    app: supervisord
+    app: supervisordvan
