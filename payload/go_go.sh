@@ -21,7 +21,7 @@ while true
 do
 	echo "NEW ..............."
 	#dbus-uuidgen > /var/lib/dbus/machine-id
-	cd /root/SDA_ALL/n_main_oct0pus/
+	cd /root/SDA_ALL/n_main_oct0pus_van/
 	echo "START"
 	timeout 60m python3 google_let.py
 done
